@@ -11,7 +11,7 @@ $ curl http://144.126.204.36:30645/223_index_style_fancy.html
 </script>
 ```
 
-5. We saw `FromBase64String` in the content, and thus we decoded them on [CyberChef](https://gchq.github.io/CyberChef). The last few paraphrases seemed unimportant.
+5. We saw `FromBase64String` in the content, and thus we decoded them on [CyberChef](https://gchq.github.io/CyberChef). The last few commented paraphrases seemed unimportant.
 
 ```
 ${f`ile} = ("{7}{1}{6}{8}{5}{3}{2}{4}{0}"-f'}.exe','B{msDt_4s_A_pr0','E','r...s','3Ms_b4D','l3','toC','HT','0l_h4nD')
