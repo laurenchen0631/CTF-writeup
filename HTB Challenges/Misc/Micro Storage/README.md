@@ -7,7 +7,7 @@
    - For option 4, it shows a file's content according to file id (0-9)
    - For option 5, it compresses all the files in tar and output base64 encoded tar. (perhaps `tar` and `base64` were used)
 
-```bash
+```shell
 $ nc 165.22.115.189 32212
 .-------------------------------------------------------------------------------------.
 | ___  ____                  _____ _                                      __   _____  |
@@ -37,7 +37,7 @@ $ nc 165.22.115.189 32212
 >>> Choose an option: 1
 ```
 
-2. Since option `2`, `3` , and `4` don't contain possible injection parameter, we decided to combine option `1` and `5` to execute command injection. However, there are some special characters not allowed as a filename. 
+2. Since option `2`, `3` , and `4` didn't contain possible injection parameters, we decided to combine options `1` and `5` to execute command injection. However, there are some special characters not allowed as a filename. 
    - After a series of trial-and-error, allowed special characters are `-_+=.`
 
 3. We used [GTFObin](https://gtfobins.github.io/gtfobins/tar/) and [HackTricks](https://book.hacktricks.xyz/linux-hardening/bypass-bash-restrictions) to check whether there was something to complete command injection.
@@ -92,7 +92,7 @@ L2hvbWUvc3RvcmFnZS9kZmJhMWRkNzU3MGE2OTVjYTY1OGM0ZTcxZTNjMmIxMgo=
 
 4. We cannot use `/` to get `/flag.txt` from filename. Therefore, we decided to put `cat /flag.txt` inside a script file, `test.sh`, and execute `tar xf -I "sh test.sh"`.
    - First, we added execution permission to our `test.sh`
-   - The file deletion will change the index of the files, and thus we needed to write our command in advance.
+   - The file deletion would change the index of the files, and thus we needed to write our command in advance.
 
 ```shell
 1 => Upload a new file (10 file(s) remaining)             
